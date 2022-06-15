@@ -1,15 +1,14 @@
-﻿// Дано 3-хзначное число, 
-// пример: 123 => {1, 2. 3}
-// a[0]= 1
-// a[1]=2
-// a[2]=3
+﻿// Напишите программу, которая принимает на
+// вход трёхзначное число и на выходе показывает вторую
+// цифру этого числа.
 
-Console.WriteLine("Введите трехзначное число.\nВыхода из программы команда Exit.");
-    while(true)
-    {
-        string input = Console.ReadLine();
-        if(!input.Equals("exit"))
-            Console.WriteLine("{0}->{1}",input, input[1]);
-        else
-            break;
-    }
+
+Console.WriteLine("Введите трехзначное число: ");
+
+string paramString = Console.ReadLine();
+int paramInt = int.Parse(paramString);
+        
+if (paramString.Length != 3)
+Console.WriteLine("Введено неверное число!");
+else
+Console.Write("Вторая цифра числа: " + (paramInt % 100)/10);
